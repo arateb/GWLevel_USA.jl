@@ -1,0 +1,29 @@
+# Julia
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+deps/deps.jl
+docs/build/
+docs/site/
+
+# Build artifacts
+*.o
+*.a
+*.so
+*.dll
+*.dylib
+
+# Editors
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.sublime-*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local development
+LocalPreferences.toml
