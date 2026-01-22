@@ -125,10 +125,40 @@ GWLevel_USA/
 ├── test/
 │   └── runtests.jl
 ├── examples/
-│   └── run_analysis.jl
+│   ├── run_analysis.jl     # Main CONUS analysis
+│   └── scripts/
+│       ├── baseline_sensitivity.jl   # Baseline period sensitivity
+│       ├── trend_breakpoints.jl      # Piecewise trend analysis
+│       ├── plot_baseline_sensitivity.R
+│       └── create_maps.R             # Spatial visualization
 ├── docs/
 ├── Project.toml
 └── README.md
+```
+
+---
+
+## Analysis Scripts
+
+### Baseline Sensitivity Analysis
+Tests storage estimates across different baseline periods (1930-1945, 1935-1950, 1940-1955, 1945-1960, 1950-1965).
+
+```bash
+julia --project=. examples/scripts/baseline_sensitivity.jl
+```
+
+### Trend Breakpoint Analysis
+Detects acceleration/deceleration periods using piecewise linear regression.
+
+```bash
+julia --project=. examples/scripts/trend_breakpoints.jl
+```
+
+### Spatial Maps (R)
+Creates choropleth maps of storage change, depletion rates, and trend patterns.
+
+```bash
+Rscript examples/scripts/create_maps.R
 ```
 
 ---
@@ -266,6 +296,20 @@ If you use this package, please cite:
 ## License
 
 Research use. Contact author for collaboration.
+
+---
+
+## Key Results
+
+Total CONUS groundwater storage change: **-2,232 ± 353 km³** (1940-2025 vs 1940-1955 baseline)
+
+| Top Depleted Aquifers | Storage (km³) |
+|-----------------------|---------------|
+| Central/South High Plains | -623 ± 176 |
+| Basin and Range | -594 ± 202 |
+| Arizona Alluvials | -253 ± 82 |
+| SE Coastal Plain | -145 ± 70 |
+| Mississippi River Valley | -111 ± 35 |
 
 ---
 
