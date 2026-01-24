@@ -1,6 +1,6 @@
 name = "GWLevel_USA"
 uuid = "a1b2c3d4-5678-90ab-cdef-1234567890ab"
-authors = ["Dr. Ashraf Rateb <rateb@beg.utexas.edu>"]
+authors = ["Ashraf Rateb <ashraf.rateb01@gmail.com>"]
 version = "0.1.0"
 
 [deps]
