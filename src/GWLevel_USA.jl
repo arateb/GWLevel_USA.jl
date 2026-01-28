@@ -47,12 +47,17 @@ using StatsBase
 # If needed, add to Project.toml: GeoDataFrames = "62cb38b5-d8d2-4862-a48e-6a340996859f"
 
 # Include submodules
+include("Phase0_DataLoad.jl")  # Raw data loading from NWIS, CA DWR, TX TWDB
 include("Config.jl")
 include("DataIO.jl")
 include("Spatial.jl")
 include("Bayesian.jl")
 include("QualityControl.jl")
 include("Analysis.jl")
+
+# Re-export from Phase0_DataLoad (raw data loading)
+export load_nwis_data, load_california_data, load_texas_data
+export load_all_raw_data, harmonize_data
 
 # Re-export from Config
 export GWConfig, SyPrior, AquiferInfo

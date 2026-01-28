@@ -271,7 +271,7 @@ for aquifer in aquifers
         depths = filter(x -> !ismissing(x) && isfinite(x), gdf.DepthToWater_m)
         n_years = length(unique(gdf.Year))
 
-        if length(depths) < CONFIG.min_years_baseline
+        if n_years < CONFIG.min_years_baseline
             return (Baseline_m=missing, Baseline_SD=missing, N_Years=0)
         end
 
@@ -601,7 +601,7 @@ for row in eachrow(storage_results)
         m1 = years .<= bp
         m2 = years .> bp
 
-        sum(m1) < 5 || sum(m2) < 5 && continue
+        (sum(m1) < 5 || sum(m2) < 5) && continue
 
         # Fit segments
         y1, v1 = years[m1], values[m1]

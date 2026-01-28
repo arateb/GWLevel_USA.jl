@@ -27,3 +27,8 @@ Thumbs.db
 
 # Local development
 LocalPreferences.toml
+# Data files (too large for git)
+data/
+*.RData
+*.csv
+
